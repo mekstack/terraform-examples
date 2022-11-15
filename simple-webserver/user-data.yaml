@@ -1,0 +1,7 @@
+#cloud-config
+
+runcmd:
+  - apt-get update
+  - apt-get install -y nginx
+  - systemctl enable nginx --now
+  - echo $(hostname) > /var/www/html/index.nginx-debian.html
